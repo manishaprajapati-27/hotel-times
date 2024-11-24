@@ -12,18 +12,23 @@
   left: 0;
   z-index: 999;
   background: var(--dark);
-  opacity: 0;
   visibility: hidden;
+  overflow: hidden;
 }
 .loader .logo {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
 }
 .loader .logo img {
   width: 60%;
+  transform: scale(0.5);
   margin-bottom: 25px;
+  opacity: 0;
+  visibility: hidden;
 }
 .loader h4 {
   font-size: 2.77vw;
@@ -31,7 +36,9 @@
   text-transform: uppercase;
   color: var(--light);
   font-family: var(--sans-serif-alt);
-  font-weight: 700;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s all ease;
 }
 
 /* Navbar */
@@ -144,11 +151,11 @@
   align-items: center;
   gap: 2vw;
   position: absolute;
-  top: 50%;
+  top: 38%;
   left: 0;
   width: 100%;
-  overflow: hidden;
-  transform: translateY(-50%);
+  /* overflow: hidden; */
+  transform: translateX(-100%);
   z-index: 3;
   white-space: nowrap;
 }
