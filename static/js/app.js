@@ -27,7 +27,6 @@ const appFunc = () => {
   });
 
   //   Text Marquee Animation
-
   //   gsap.from(".hero .marque", {
   //     transform: "translateX(-200%)",
   //     repeat: -1,
@@ -47,15 +46,15 @@ const appFunc = () => {
   });
 
   marqueTimeline.to(".hero .marque", {
-    x: "0%", // Moves left
-    duration: 20, // Duration of animation
-    ease: "none", // Linear motion
+    x: "0%",
+    duration: 20,
+    ease: "none",
   });
 
   // Setup ScrollTrigger
   ScrollTrigger.create({
-    trigger: ".hero", // Element to monitor for scrolling
-    scroller: "body", // Default scroller is body
+    trigger: ".hero",
+    scroller: "body",
     start: "top top", // When element starts at the top
     end: "bottom top", // When element ends at the top
     onUpdate: (self) => {
@@ -68,28 +67,73 @@ const appFunc = () => {
     },
   });
 
-  //   window.addEventListener("wheel", (dets) => {
-  //     console.log(dets.deltaY);
-  //     if (dets.deltaY > 0) {
-  //       gsap.from(".hero .marque", {
-  //         // transform: "translateX(-200%)",
-  //         x: "-200%",
-  //         repeat: -1,
-  //         duration: 5,
-  //         delay: 1,
-  //         ease: "none",
-  //       });
-  //     } else if (dets.deltaY < 0) {
-  //       gsap.from(".hero .marque", {
-  //         // transform: "translateX(0%)",
-  //         x: "0%",
-  //         repeat: -1,
-  //         duration: 5,
-  //         delay: 1,
-  //         ease: "none",
-  //       });
-  //     }
+  //   Hero Images
+  let isScrolling;
+  const heroAnimationSection = gsap.to(".hero", {
+    duration: 10,
+    ease: "none",
+    height: 0,
+    scrollTrigger: {
+      trigger: ".hero",
+      scroller: "body",
+      start: "top top", // When element starts at the top
+      end: "bottom top",
+      //   markers: true,
+      scrub: 3,
+    },
+  });
+  const heroOverlay = gsap.to(".hero .overlay", {
+    duration: 5,
+    ease: "none",
+    height: "100%",
+    scrollTrigger: {
+      trigger: ".hero",
+      scroller: "body",
+      start: "top top", // When element starts at the top
+      end: "bottom top",
+      //   markers: true,
+      scrub: 3,
+    },
+  });
+
+  window.addEventListener("wheel", () => {
+    heroAnimationSection.resume();
+    heroOverlay.resume();
+
+    clearTimeout(isScrolling);
+    isScrolling = setTimeout(() => {
+      heroAnimationSection.pause();
+      heroOverlay.pause();
+    }, 200);
+  });
+
+  //   gsap.from(".below-hero-text h2", {
+  //     duration: 2,
+  //     transform: "translateX(20%)",
+  //     opacity: 0,
+  //     stagger: 0.5,
+  //     scrollTrigger: {
+  //       trigger: ".below-hero-text",
+  //       scroller: "body",
+  //       start: "top top",
+  //       end: "bottom top",
+  //     },
   //   });
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from(".below-hero-text h2", {
+    duration: 2,
+    stagger: 0.8,
+    opacity: 0, // Move animation properties here
+    x: "-20%", // For translateX, use "x" in GSAP
+    scrollTrigger: {
+      trigger: ".below-text-hero",
+      scroller: "body",
+      start: "top top",
+      end: "bottom top",
+    },
+  });
 };
 
 appFunc();

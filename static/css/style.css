@@ -114,12 +114,12 @@
   height: 110vh;
   overflow: hidden;
 }
-.hero::after {
-  content: "";
+.hero .overlay {
+  /* content: ""; */
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 25vh;
+  height: 30%;
   width: 100%;
   z-index: 5;
   background: linear-gradient(0deg, #0f0f0f, #0f0f0fb7, #0f0f0f00);
@@ -133,6 +133,8 @@
   left: 0;
   height: 100%;
   width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 .hero .images .img-one img {
   z-index: 4;
@@ -178,6 +180,7 @@
   text-transform: capitalize;
   color: var(--light);
   font-family: var(--serif);
+  line-height: 1.2;
 }
 
 /* Below Hero Texts  */
@@ -200,6 +203,21 @@
   font-weight: 400;
   font-size: 2.77vw;
   margin-bottom: 12px;
+}
+.below-hero-text .texts h2 {
+  color: var(--light);
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 2.77vw;
+  margin-bottom: 12px;
+  opacity: 1;
+  transform: translateX(0);
+}
+.below-hero-text .texts h2:nth-child(2) {
+  margin-left: 8rem;
+}
+.below-hero-text .texts h2:nth-child(3) {
+  margin-left: 12rem;
 }
 
 /* Hotel Times Event */
