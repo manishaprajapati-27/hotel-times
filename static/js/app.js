@@ -134,6 +134,80 @@ const appFunc = () => {
       end: "bottom top",
     },
   });
+
+  //   Hotel Events
+  //   gsap.from(".image-container", {
+  //     duration: 5,
+  //     transform: "scale(1.4, 1.4)",
+  //     scrollTrigger: {
+  //       trigger: ".hotel-times-event",
+  //       scroller: "body",
+  //       start: "top 60%",
+  //       end: "bottom top",
+  //       markers: true,
+  //       transform: "scale(1, 1)",
+  //     },
+  //   });
+  gsap.from(".hotel-events h2", {
+    duration: 5,
+    scale: 1.4,
+    scrollTrigger: {
+      trigger: ".hotel-times-event",
+      scroller: "body",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 2,
+      markers: true, // Shows markers for debugging
+    },
+  });
+  gsap.from(".image-grid-1", {
+    duration: 5,
+    transform: "translateY(-20%)",
+    scrollTrigger: {
+      trigger: ".hotel-times-event",
+      scroller: "body",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 4,
+      markers: true, // Shows markers for debugging
+    },
+  });
+  gsap.from(".image-grid-2", {
+    duration: 5,
+    transform: "translateY(20%)",
+    scrollTrigger: {
+      trigger: ".hotel-times-event",
+      scroller: "body",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 4,
+      markers: true, // Shows markers for debugging
+    },
+  });
+  gsap.from(".image-grid-3", {
+    duration: 5,
+    transform: "translateY(-20%)",
+    scrollTrigger: {
+      trigger: ".hotel-times-event",
+      scroller: "body",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 4,
+      markers: true, // Shows markers for debugging
+    },
+  });
+  gsap.from(".image-container", {
+    duration: 5,
+    scale: 1.4,
+    scrollTrigger: {
+      trigger: ".hotel-times-event",
+      scroller: "body",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 4,
+      markers: true, // Shows markers for debugging
+    },
+  });
 };
 
 appFunc();
