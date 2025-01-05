@@ -148,66 +148,151 @@ const appFunc = () => {
   //       transform: "scale(1, 1)",
   //     },
   //   });
-  gsap.from(".hotel-events h2", {
-    duration: 5,
-    scale: 1.4,
-    scrollTrigger: {
-      trigger: ".hotel-times-event",
-      scroller: "body",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: 2,
-      markers: true, // Shows markers for debugging
-    },
-  });
-  gsap.from(".image-grid-1", {
-    duration: 5,
-    transform: "translateY(-20%)",
-    scrollTrigger: {
-      trigger: ".hotel-times-event",
-      scroller: "body",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: 4,
-      markers: true, // Shows markers for debugging
-    },
-  });
-  gsap.from(".image-grid-2", {
-    duration: 5,
-    transform: "translateY(20%)",
-    scrollTrigger: {
-      trigger: ".hotel-times-event",
-      scroller: "body",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: 4,
-      markers: true, // Shows markers for debugging
-    },
-  });
-  gsap.from(".image-grid-3", {
-    duration: 5,
-    transform: "translateY(-20%)",
-    scrollTrigger: {
-      trigger: ".hotel-times-event",
-      scroller: "body",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: 4,
-      markers: true, // Shows markers for debugging
-    },
-  });
-  gsap.from(".image-container", {
-    duration: 5,
-    scale: 1.4,
-    scrollTrigger: {
-      trigger: ".hotel-times-event",
-      scroller: "body",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: 4,
-      markers: true, // Shows markers for debugging
-    },
-  });
+  //   gsap.from(".hotel-events h2", {
+  //     duration: 5,
+  //     scale: 1.4,
+  //     scrollTrigger: {
+  //       trigger: ".hotel-times-event",
+  //       scroller: "body",
+  //       start: "top top",
+  //       end: "bottom bottom",
+  //       scrub: 2,
+  //       markers: true, // Shows markers for debugging
+  //     },
+  //   });
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".hotel-times-event",
+        scroller: "body",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 2,
+        markers: true, // Shows markers for debugging
+      },
+    })
+    .from(
+      ".hotel-events h2",
+      {
+        scale: 0.5,
+      },
+      0
+    );
+  //   gsap.from(".image-grid-1", {
+  //     duration: 5,
+  //     transform: "translateY(-20%)",
+  //     scrollTrigger: {
+  //       trigger: ".hotel-times-event",
+  //       scroller: "body",
+  //       start: "top top",
+  //       end: "bottom bottom",
+  //       scrub: 4,
+  //       markers: true, // Shows markers for debugging
+  //     },
+  //   });
+  //   gsap.from(".image-grid-2", {
+  //     duration: 5,
+  //     transform: "translateY(20%)",
+  //     scrollTrigger: {
+  //       trigger: ".hotel-times-event",
+  //       scroller: "body",
+  //       start: "top top",
+  //       end: "bottom bottom",
+  //       scrub: 4,
+  //       markers: true, // Shows markers for debugging
+  //     },
+  //   });
+  //   gsap.from(".image-grid-3", {
+  //     duration: 5,
+  //     transform: "translateY(-20%)",
+  //     scrollTrigger: {
+  //       trigger: ".hotel-times-event",
+  //       scroller: "body",
+  //       start: "top top",
+  //       end: "bottom bottom",
+  //       scrub: 4,
+  //       markers: true, // Shows markers for debugging
+  //     },
+  //   });
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".hotel-times-event",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 4,
+      },
+    })
+    .to(
+      ".image-grid-1",
+      {
+        y: "-20%",
+      },
+      0
+    )
+    .to(
+      ".image-grid-2",
+      {
+        y: "20%",
+      },
+      0
+    )
+    .to(
+      ".image-grid-3",
+      {
+        y: "-20%",
+      },
+      0
+    );
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".hotel-times-event",
+        scroller: "body",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 4,
+        markers: true, // Shows markers for debugging
+      },
+    })
+    .to(
+      ".image-container",
+      {
+        //   position: "fixed",
+        scale: 1,
+        duration: 0,
+      },
+      0
+    );
+
+  //   gsap.from(".image-container", {
+  //     duration: 5,
+  //     scale: 1.4,
+  //     scrollTrigger: {
+  //       trigger: ".hotel-times-event",
+  //       scroller: "body",
+  //       start: "top bottom",
+  //       end: "bottom top",
+  //       scrub: 4,
+  //       markers: true, // Shows markers for debugging
+  //     },
+  //   });
+
+  //   const stickySections = document.querySelectorAll('.fixed-sec');
+  //        stickySections.forEach(sticky => {
+  //   gsap
+  //     .timeline({
+  //       scrollTrigger: {
+  //         trigger: ".image-container",
+  //         start: "top bottom",
+  //       },
+  //     })
+  //     .to(".image-container", {
+  //       position: "fixed",
+  //       duration: 0,
+  //     });
+  //  }),
 };
 
 appFunc();

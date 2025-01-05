@@ -310,9 +310,21 @@
 
 /* Hotel Times Event */
 .hotel-times-event {
+  background: var(--dark);
+}
+
+.hotel-times-event .sec-wrapper {
+  height: 175vh;
+}
+
+.hotel-times-event .inner-container {
   height: 100vh;
-  position: relative;
+  width: 100%;
   overflow: hidden;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 0;
 }
 
 .hotel-times-event .hotel-events h2 {
@@ -332,7 +344,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   z-index: 3;
 }
@@ -348,8 +360,13 @@
       -ms-flex-pack: center;
           justify-content: center;
   gap: 0 10px;
-  -webkit-transform: scale(1, 1);
-          transform: scale(1, 1);
+  -webkit-transform: scale(1, 1.4);
+          transform: scale(1, 1.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
 }
 
 .hotel-times-event .image-container .image-grid {
@@ -401,5 +418,19 @@
   .below-hero-text .texts h2 {
     font-size: 2.77rem;
   }
+}
+
+.image-text-sec {
+  position: relative;
+}
+
+.image-text-sec .image {
+  height: 100vh;
+  width: 30vw;
+  margin-left: auto;
+}
+
+.image-text-sec .image img {
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */
